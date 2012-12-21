@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"log"
 	"net/http"
 )
 
@@ -22,6 +23,6 @@ func main() {
 	http.Handle("/", http.FileServer(httproot))
 	err := http.ListenAndServe(*address, nil)
 	if err != nil {
-		fmt.Printf("ERROR: %v", err)
+		log.Fatal(err)
 	}
 }

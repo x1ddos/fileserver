@@ -1,20 +1,20 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"net/http"
-	"flag"
 )
 
 var (
-	port *int = flag.Int("p", 8000, "Port to listen at")
+	port    *int    = flag.Int("p", 8000, "Port to listen at")
 	address *string = flag.String("a", "localhost", "Address to listen on")
-	root *string = flag.String("d", ".", "Root directory")
+	root    *string = flag.String("d", ".", "Root directory")
 )
 
 func main() {
 	flag.Parse()
-	
+
 	httproot := http.Dir(*root)
 	*address = fmt.Sprintf("%s:%d", *address, *port)
 	fmt.Printf("Serving %s on http://%s\n", httproot, *address)

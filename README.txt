@@ -1,6 +1,6 @@
 Simplest file server to (temporarily) serve static content from a local filesystem.
 
-go get github.com/crhym3/fileserver
+go get github.com/x1ddos/fileserver
 fileserver -d /tmp -a 0.0.0.0 -p 8001
 
 Usage of fileserver:
